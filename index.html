@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>BAHAA BADER - Workout Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+        a{
+             margin: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #1e728b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none   ;
+        }
+
+        header {
+            background-color: #5db0c9;
+            color: white;
+            padding: 15px;
+            font-size: 28px;
+            font-weight: bold;
+
+            
+        }
+
+        h2 {
+            color: #1e728b;
+            margin-top: 40px;
+            font-size: 28px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: #1e728b;
+            color: white;
+        }
+
+        input {
+            width: 70px;
+            padding: 7px;
+            font-size: 16px;
+            text-align: center;
+        }
+        input[type="text"]{
+            width: 400px;
+            padding: 7px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        button {
+            margin: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #1e728b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>BAHAA BADER - Workout Tracker 💪</header>
+
+<h2>אימון A - חזה ויד אחורית</h2>
+
+<table>
+<tr>
+    <th>מספר</th>
+    <th>שם התרגיל</th>
+    <th>משקל</th>
+    <th>מספר חזרות</th>
+    <th>מספר סטים</th>
+</tr>
+
+<tr><td>1</td><td><input type ="text" placeholder="חתירה עליון נגד סמיט משין"></td><td><input value="20 קג"></td><td><input value="8"></td><td><input value="3"></td></tr>
+<tr><td>2</td><td><input type ="text" placeholder="לחיצת חזה בסמית משין"></td><td><input value="25 קג"></td><td><input value="8"></td><td><input value="3"></td></tr>
+<tr><td>3</td><td><input type ="text" placeholder="חזה פרפר במכונה"></td><td><input value="40 קג"></td><td><input value="12"></td><td><input value="3"></td></tr>
+<tr><td>4</td><td><input type ="text" placeholder="לחיצת חזה כנגד מכונה בישיבה"></td><td><input value="45 קג"></td><td><input value="12"></td><td><input value="3"></td></tr>
+<tr><td>5</td><td><input type ="text" placeholder="פשיטת מרפקים כנגד קייבל קרוס עם מוט"></td><td><input value="7 קג"></td><td><input value="12"></td><td><input value="3"></td></tr>
+<tr><td>6</td><td><input type ="text" placeholder="פשיטת מרפקים מעל הראש עם חבל בקייבל קרוס"></td><td><input value="15 קג"></td><td><input value="12"></td><td><input value="3"></td></tr>
+<tr><td>7</td><td><input type ="text" placeholder="פשיטת מרפקים בשכיבה עם משקולות יד"></td><td><input value="5 קג"></td><td><input value="10"></td><td><input value="3"></td></tr>
+</table>
+
+<button onclick="saveData()">שמור שינויים</button>
+<br>
+
+<script>
+    function saveData() {
+        let inputs = document.querySelectorAll("input");
+
+        for (let i = 0; i < inputs.length; i++) {
+            localStorage.setItem("input_" + i, inputs[i].value);
+        }
+
+        alert("השינויים נשמרו בהצלחה 💪");
+    }
+
+    window.onload = function () {
+        let inputs = document.querySelectorAll("input");
+
+        for (let i = 0; i < inputs.length; i++) {
+            let savedValue = localStorage.getItem("input_" + i);
+
+            if (savedValue !== null) {
+                inputs[i].value = savedValue;
+            }
+        }
+    }
+</script>
+<a href="training2.Html"> דף 3</a>
+<a href="training1.Html"> דף 2</a>
+</body>
+</html>
