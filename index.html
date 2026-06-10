@@ -6,79 +6,55 @@
     <title>BAHAA BADER - Workout Tracker</title>
 
      <style>
-        body {
-            font-family: Arial;
-            background-color: #f4f4f4;
-            margin: 0;
-            text-align: center;
-        }
-         a{
-             margin: 20px;
-            padding: 12px 25px;
-            font-size: 18px;
-            background-color: #1e728b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none   ;
-        }
+      .tableBox{
+    width:100%;
+    overflow-x:auto;
+}
 
+input[type="text"]{
+    width:95%;
+    padding:7px;
+    font-size:16px;
+    text-align:center;
+    box-sizing:border-box;
+}
 
-        header {
-            background-color: #5db0c9;
-            color: white;
-            padding: 15px;
-            font-size: 28px;
-            font-weight: bold;
-        }
+@media screen and (max-width:768px){
 
-        h2 {
-            color: #1e728b;
-            margin-top: 40px;
-            font-size: 28px;
-        }
+    header{
+        font-size:20px;
+        padding:10px;
+    }
 
-        table {
-            width: 90%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background-color: white;
-        }
+    h2{
+        font-size:22px;
+    }
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 18px;
-        }
+    table{
+        width:100%;
+        min-width:unset;
+    }
 
-        th {
-            background-color: #1e728b;
-            color: white;
-        }
+    th,td{
+        font-size:12px;
+        padding:5px;
+    }
 
-        input {
-            width: 70px;
-            padding: 7px;
-            font-size: 16px;
-            text-align: center;
-        }
-           input[type="text"]{
-            width: 400px;
-            padding: 7px;
-            font-size: 16px;
-            text-align: center;
-        }
+    input{
+        width:50px;
+        font-size:12px;
+    }
 
+    input[type="text"]{
+        width:95%;
+        font-size:12px;
+    }
 
-        button {
-            margin: 20px;
-            padding: 12px 25px;
-            font-size: 18px;
-            background-color: #1e728b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-        }
+    button,a{
+        font-size:16px;
+        padding:10px 15px;
+    }
+}
     </style>
 </head>
 
@@ -88,6 +64,7 @@
 
 <h2>אימון A - חזה ויד אחורית</h2>
 
+<div class="tableBox">
 <table>
 <tr>
     <th>מספר</th>
@@ -105,6 +82,7 @@
 <tr><td>6</td><td><input type="text" value="פשיטת מרפקים מעל הראש עם חבל בקייבל קרוס"></td><td><input value="15 קג"></td><td><input value="12"></td><td><input value="3"></td></tr>
 <tr><td>7</td><td><input type="text" value="פשיטת מרפקים בשכיבה עם משקולות יד"></td><td><input value="5 קג"></td><td><input value="10"></td><td><input value="3"></td></tr>
 </table>
+</div>
 
 <button onclick="saveData()">שמור שינויים</button>
 <br>
