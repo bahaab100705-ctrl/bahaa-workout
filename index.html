@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAHAA BADER - Workout Tracker</title>
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAHAA BADER - Workout Tracker</title>
 
-     <style>
-        body {
-            font-family: Arial;
-            background-color: #f4f4f4;
-            margin: 0;
-            text-align: center;
-        }
-         a{
-             margin: 20px;
-            padding: 12px 25px;
-            font-size: 18px;
-            background-color: #1e728b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none   ;
-        }
+<style>
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    margin:0;
+    text-align:center;
+}
 
+header{
+    background:#5db0c9;
+    color:white;
+    padding:15px;
+    font-size:28px;
+    font-weight:bold;
+}
 
-        header {
-            background-color: #5db0c9;
-            color: white;
-            padding: 15px;
-            font-size: 28px;
-            font-weight: bold;
-        }
+h2{
+    color:#1e728b;
+    margin-top:35px;
+    font-size:28px;
+}
 
-        h2 {
-            color: #1e728b;
-            margin-top: 40px;
-            font-size: 28px;
-        }
+.tableBox{
+    width:100%;
+    overflow-x:auto;
+}
 
-        table {
-            width: 90%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background-color: white;
-        }
+table{
+    width:96%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+}
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 18px;
-        }
+th,td{
+    border:1px solid #ccc;
+    padding:8px;
+    font-size:14px;
+}
 
-        th {
-            background-color: #1e728b;
-            color: white;
-        }
+th{
+    background:#1e728b;
+    color:white;
+}
 
-        input {
-            width: 70px;
-            padding: 7px;
-            font-size: 16px;
-            text-align: center;
-        }
-           input[type="text"]{
-            width: 400px;
-            padding: 7px;
-            font-size: 16px;
-            text-align: center;
-        }
+input{
+    width:55px;
+    padding:6px;
+    font-size:14px;
+    text-align:center;
+}
 
+input[type="text"]{
+    width:95%;
+    padding:6px;
+    font-size:14px;
+    text-align:center;
+    box-sizing:border-box;
+}
 
-        button {
-            margin: 20px;
-            padding: 12px 25px;
-            font-size: 18px;
-            background-color: #1e728b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-        }
-        </style>
+button,a{
+    margin:12px;
+    padding:12px 25px;
+    font-size:18px;
+    background:#1e728b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-block;
+}
+
+@media screen and (max-width:768px){
+    header{font-size:22px;}
+    h2{font-size:22px;}
+    th,td{font-size:12px;padding:6px;}
+    input{width:45px;font-size:12px;}
+    input[type="text"]{width:95%;font-size:12px;}
+    button,a{font-size:16px;padding:10px 20px;}
+}
+</style>
 </head>
 
 <body>
@@ -91,11 +97,11 @@
 <div class="tableBox">
 <table>
 <tr>
-    <th>מספר</th>
-    <th>שם התרגיל</th>
-    <th>משקל</th>
-    <th>מספר חזרות</th>
-    <th>מספר סטים</th>
+<th>מספר</th>
+<th>שם התרגיל</th>
+<th>משקל</th>
+<th>מספר חזרות</th>
+<th>מספר סטים</th>
 </tr>
 
 <tr><td>1</td><td><input type="text" value="חתירה עליון נגד סמיט משין"></td><td><input value="20 קג"></td><td><input value="8"></td><td><input value="3"></td></tr>
@@ -115,29 +121,29 @@
 <a href="training2.Html">דף 3</a>
 
 <script>
-    let pageName = "page1_";
+let pageName = "page1_";
 
-    function saveData() {
-        let inputs = document.querySelectorAll("input");
+function saveData(){
+    let inputs = document.querySelectorAll("input");
 
-        for (let i = 0; i < inputs.length; i++) {
-            localStorage.setItem(pageName + "input_" + i, inputs[i].value);
-        }
-
-        alert("השינויים נשמרו בהצלחה 💪");
+    for(let i = 0; i < inputs.length; i++){
+        localStorage.setItem(pageName + "input_" + i, inputs[i].value);
     }
 
-    window.onload = function () {
-        let inputs = document.querySelectorAll("input");
+    alert("השינויים נשמרו בהצלחה 💪");
+}
 
-        for (let i = 0; i < inputs.length; i++) {
-            let savedValue = localStorage.getItem(pageName + "input_" + i);
+window.onload = function(){
+    let inputs = document.querySelectorAll("input");
 
-            if (savedValue !== null) {
-                inputs[i].value = savedValue;
-            }
+    for(let i = 0; i < inputs.length; i++){
+        let savedValue = localStorage.getItem(pageName + "input_" + i);
+
+        if(savedValue !== null){
+            inputs[i].value = savedValue;
         }
     }
+}
 </script>
 
 </body>
